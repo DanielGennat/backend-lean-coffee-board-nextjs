@@ -3,6 +3,18 @@ import { useState } from "react";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Form from "../components/Form";
+import { getAllCards } from "../services/cardsService";
+
+export async function getServerSideProps() {
+
+  const cards = await getAllCards();
+
+  return{
+    props: {
+      cards: cards,
+    },
+  };
+}
 
 export default function Home() {
   const [cardList, setCardList] = useState([]);
