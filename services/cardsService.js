@@ -1,5 +1,5 @@
-import dbConnect from "../../dbConnect";
-import Card from "../../models/Card";
+import dbConnect from "../dbConnect";
+import Card from "../models/Card";
 
 export async function getAllCards() {
     await dbConnect();

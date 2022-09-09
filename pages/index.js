@@ -16,8 +16,9 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home() {
-  const [cardList, setCardList] = useState([]);
+export default function Home({cards}) {
+  const [cardList, setCardList] = useState(cards);
+  console.log(cardList);
 
   function addCard(newCard) {
     setCardList([newCard, ...cardList]);
